@@ -1,0 +1,110 @@
+:root {
+  --blue: #162CA2;
+  --navy: #13123D;
+  --yellow: #FCDF59;
+  --tint: #EEF1FC;
+  --ytint: #FFF3BF;
+  --muted: #5A5F86;
+  --red: #B4381A;
+  --redbg: #FFE9E3;
+  --green: #1E7A44;
+  --greenbg: #E4F5EA;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--tint);
+  color: var(--navy);
+}
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--blue);
+  color: #fff;
+  padding: 1.25rem 1.4rem;
+  border-radius: 14px;
+  margin-bottom: 1.2rem;
+}
+header .logo { width: 44px; height: 44px; filter: invert(1) brightness(2); }
+header h1 { margin: 0; font-size: 1.25rem; }
+header p { margin: 0.2rem 0 0; font-size: 0.85rem; opacity: 0.85; }
+section { margin-bottom: 1.1rem; }
+.tambah { display: flex; gap: 0.5rem; }
+input[type="text"], input:not([type]), input[type="number"] {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid #d8ddf5;
+  border-radius: 9px;
+  font-size: 0.95rem;
+}
+input:focus { outline: none; border-color: var(--blue); }
+button {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+button:hover { opacity: 0.9; }
+button.hapus { background: var(--red); padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+button.sekunder { background: #fff; color: var(--blue); border: 1.5px solid var(--blue); }
+.toggle label { font-size: 0.9rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; }
+.daftar { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(19,18,61,0.06);
+}
+.item span:first-child { flex: 1; font-weight: 600; }
+.item .harga { color: var(--muted); font-size: 0.9rem; }
+.item.selesai span:first-child { text-decoration: line-through; color: var(--muted); }
+.ringkasan {
+  background: var(--ytint);
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+}
+.ringkasan b { color: var(--blue); }
+.notif {
+  background: var(--greenbg);
+  color: var(--green);
+  padding: 0.6rem 1rem;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.card {
+  background: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(19,18,61,0.06);
+  margin-bottom: 1rem;
+}
+.card h3 { margin: 0 0 0.6rem; color: var(--blue); font-size: 1rem; }
+.catatan {
+  background: var(--tint);
+  border-left: 3px solid var(--blue);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  border-radius: 0 8px 8px 0;
+  margin-top: 0.5rem;
+}
