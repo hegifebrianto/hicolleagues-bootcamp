@@ -45,17 +45,22 @@ const rataRataHarga = computed(() =>
 // ===== Menangani event dari FormTambahItem =====
 // @tambah="tanganiTambah" di template menangkap emit('tambah', data)
 function tanganiTambah(dataBaru) {
+  console.log('component parent berhasil menangkap value dari child :', dataBaru);
+
   daftarBelanja.value.push({
-    id: Date.now(),
+    id: daftarBelanja.value.length + 1,
     nama: dataBaru.nama,
     harga: dataBaru.harga,
     selesai: false,
   })
+  console.log(daftarBelanja.value, 'terbaru');
 }
 
 // ===== Menangani event dari ItemBelanja =====
 function tanganiHapus(id) {
+  console.log(id,'id');
   daftarBelanja.value = daftarBelanja.value.filter((item) => item.id !== id)
+
 }
 
 function tanganiToggleSelesai(id) {
@@ -91,11 +96,7 @@ function tanganiToggleSelesai(id) {
     </section>
 
     <!-- RingkasanBelanja hanya menerima props, tidak emit apa-apa -->
-    <RingkasanBelanja
-      :total-harga="totalHarga"
-      :jumlah-item="jumlahItem"
-      :rata-rata-harga="rataRataHarga"
-    />
+    <!-- <RingkasanBelanja :total-harga="totalHarga" :jumlah-item="jumlahItem" :rata-rata-harga="rataRataHarga" /> -->
 
     <section class="card" style="margin-top: 1rem">
       <h3>Daftar Belanja (komponen: ItemBelanja × {{ jumlahItem }})</h3>
@@ -112,15 +113,11 @@ function tanganiToggleSelesai(id) {
           :item="item" -- mengirim satu objek item sebagai props.
           @hapus dan @toggle-selesai -- menangkap emit dari komponen itu.
         -->
-        <ItemBelanja
-          v-for="item in daftarBelanja"
-          :key="item.id"
-          :item="item"
-          :tampilkan-harga="tampilkanHarga"
-          @hapus="tanganiHapus"
-          @toggle-selesai="tanganiToggleSelesai"
-        />
+        <ItemBelanja v-for="item in daftarBelanja"  :key="item.id" :item="item" :tampilkan-harga="tampilkanHarga"
+          @hapus="tanganiHapus"  @toggle-selesai="tanganiToggleSelesai" />
       </ul>
+
+      <button type="button" v-oncl></button>
     </section>
   </div>
 </template>

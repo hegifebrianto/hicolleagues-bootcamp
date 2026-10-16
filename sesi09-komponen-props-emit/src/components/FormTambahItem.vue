@@ -20,10 +20,13 @@ const harga = ref(0)
 
 function kirim() {
   if (!nama.value.trim()) return
-  // emit('tambah', data) -- mengirim data ke parent lewat event 'tambah'
-  emit('tambah', { nama: nama.value, harga: Number(harga.value) || 0 })
-  nama.value = ''
-  harga.value = 0
+  else {
+    // emit('tambah', data) -- mengirim data ke parent lewat event 'tambah'
+    emit('tambah', { nama: nama.value, harga: Number(harga.value) || 0 })
+    nama.value = ''
+    harga.value = 0
+  }
+
 }
 </script>
 
@@ -31,6 +34,6 @@ function kirim() {
   <div class="tambah">
     <input v-model="nama" type="text" placeholder="Nama item..." @keyup.enter="kirim" />
     <input v-model.number="harga" type="number" placeholder="Harga" style="max-width: 120px" />
-    <button @click="kirim">Tambah</button>
+    <button v-on:click="kirim" >Tambah</button>
   </div>
 </template>
