@@ -12,7 +12,10 @@ const emit = defineEmits(['tambah'])
 const teks = ref('')
 
 function kirim() {
-  console.log(teks.value);
+
+  console.log('kirim button click');
+  console.log(teks);
+  console.log(teks.value)
   emit('tambah', teks.value)
   resetForm();
 }

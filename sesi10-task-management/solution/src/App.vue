@@ -36,9 +36,10 @@ const sisaTugas = computed(() => tugas.value.filter((t) => !t.selesai).length)
 function tambahTugas(teksBaru) {
   const bersih = teksBaru.trim() //value ' coba '=== 'coba' 
   if (!bersih) return // input kosong -> tidak ditambahkan
-  
+
   tugas.value.push({ id: Date.now(), teks: bersih, selesai: false })
   console.log(tugas.value)
+  console.log(tugas)
 }
 
 function hapusTugas(id) {
@@ -62,8 +63,14 @@ function ubahFilter(nilai) {
 // Muat dari localStorage sekali saat halaman pertama kali dibuka
 onMounted(() => {
   const data = localStorage.getItem(KEY_STORAGE)
-  console.log('data :',data);
+  // console.log('data :',data);
+  // console.log('data :',data.value);
   if (data) tugas.value = JSON.parse(data)
+
+  const newObjectDefine = [{ name: "test", age: 20 }]
+  console.log(newObjectDefine)
+  console.log(newObjectDefine.value)
+
 })
 
 // Simpan ke localStorage setiap kali tugas berubah (deep: true supaya
@@ -86,8 +93,8 @@ watch(
 
     <TodoInput @tambah="tambahTugas" />
     <TodoFilter :filter-aktif="filter" @ubah-filter="ubahFilter" />
-    
-    
+
+
     <TodoList :tugas="tugasTersaring" @ubah="toggleSelesai" @hapus="hapusTugas" />
 
     <p class="catatan">
