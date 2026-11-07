@@ -1,0 +1,61 @@
+:root {
+  --blue: #162CA2; --navy: #13123D; --yellow: #FCDF59; --tint: #EEF1FC;
+  --muted: #5A5F86; --red: #B4381A; --redbg: #FFE9E3; --green: #1E7A44; --greenbg: #E4F5EA;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--tint); color: var(--navy); }
+.app { max-width: 760px; margin: 0 auto; padding: 1.25rem 1.25rem 3rem; }
+h1 { font-size: 1.3rem; margin: 0 0 .4rem; color: var(--blue); }
+h2 { font-size: 1.05rem; margin: 0 0 .5rem; color: var(--blue); }
+h3 { font-size: 1rem; margin: 0 0 .2rem; }
+.muted { color: var(--muted); font-size: .88rem; }
+.kosong { color: var(--muted); text-align: center; padding: 1rem; }
+
+nav.menu { display: flex; gap: .4rem; flex-wrap: wrap; align-items: center; background: var(--blue); padding: .6rem .8rem; border-radius: 14px; margin-bottom: 1rem; }
+nav.menu a { color: #fff; text-decoration: none; padding: .35rem .8rem; border-radius: 8px; font-size: .9rem; font-weight: 600; }
+nav.menu a.router-link-active, nav.menu a.router-link-exact-active { background: var(--yellow); color: var(--navy); }
+nav.menu .spacer { flex: 1; }
+.sub-menu { display: flex; gap: .4rem; margin-bottom: .8rem; }
+.sub-menu a { text-decoration: none; color: var(--blue); border: 1.5px solid var(--blue); padding: .3rem .8rem; border-radius: 8px; font-size: .85rem; font-weight: 600; }
+.sub-menu a.router-link-exact-active { background: var(--blue); color: #fff; }
+
+.card { background: #fff; padding: 1.1rem 1.3rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(19,18,61,.07); margin-bottom: 1rem; }
+.badge { background: var(--yellow); color: var(--navy); border-radius: 999px; padding: 0 .5rem; font-size: .75rem; margin-left: .25rem; }
+
+button, .btn { background: var(--blue); color: #fff; border: none; padding: .55rem 1.1rem; border-radius: 9px; font-weight: 600; cursor: pointer; font-size: .9rem; text-decoration: none; display: inline-block; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.btn-kecil { padding: .3rem .8rem; font-size: .82rem; background: var(--yellow); color: var(--navy); }
+.btn-sekunder { background: #fff; color: var(--blue); border: 1.5px solid var(--blue); padding: .3rem .8rem; font-size: .82rem; }
+.btn-hapus { background: var(--red); padding: .35rem .8rem; font-size: .82rem; }
+
+input[type="text"], input[type="number"], input:not([type]) { width: 100%; padding: .55rem .75rem; border: 1.5px solid #d8ddf5; border-radius: 9px; font-size: .95rem; }
+input:focus { outline: none; border-color: var(--blue); }
+.baris { display: flex; gap: .5rem; align-items: flex-start; margin-bottom: .8rem; }
+.kolom { flex: 1; display: flex; flex-direction: column; gap: .2rem; }
+.field { display: flex; flex-direction: column; gap: .2rem; margin-bottom: .8rem; }
+.field label { font-size: .85rem; font-weight: 600; }
+.error-text { color: var(--red); font-size: .8rem; }
+
+.pesan { padding: .55rem .8rem; border-radius: 9px; font-size: .88rem; margin: 0 0 .8rem; }
+.pesan.error { background: var(--redbg); color: var(--red); }
+.pesan.sukses { background: var(--greenbg); color: var(--green); }
+.pesan.info { background: var(--tint); color: var(--muted); }
+
+.daftar { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .5rem; }
+.item { display: flex; align-items: center; gap: .7rem; background: var(--tint); padding: .65rem .9rem; border-radius: 10px; }
+.item .judul { flex: 1; color: var(--navy); text-decoration: none; font-weight: 600; }
+.item.selesai .judul { text-decoration: line-through; color: var(--muted); }
+
+.grid-buku { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: .8rem; }
+.kartu-buku { background: #fff; border-radius: 12px; padding: 1rem; box-shadow: 0 1px 3px rgba(19,18,61,.07); display: flex; flex-direction: column; gap: .3rem; }
+.kartu-buku .aksi { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .5rem; }
+
+.statusConnected { display: inline-flex; align-items: center; gap: .45rem; font-size: .8rem; background: #fff; color: var(--navy); border: 1px solid #d8ddf5; padding: .3rem .7rem; border-radius: 999px; margin-bottom: .8rem; }
+.statusConnected .titik { width: .6rem; height: .6rem; border-radius: 50%; background: #aaa; }
+.statusConnected.ok .titik { background: var(--green); }
+.statusConnected.mati { border-color: var(--red); color: var(--red); }
+.statusConnected.mati .titik { background: var(--red); }
+
+.bar { display: flex; justify-content: space-between; align-items: center; gap: .5rem; margin-bottom: .6rem; }
+.bar h2 { margin: 0; }
