@@ -10,7 +10,7 @@ export const useBukuStore = defineStore('buku', {
       this.error = ''
       try {
         const { data } = await axios.get('/api/buku')
-        // console.log(data,'data buku');
+        console.log(data,'data buku');
 
         this.daftar = data.data
         console.log(this.daftar,'isi dari this.daftar');

@@ -33,6 +33,7 @@ type koleksi struct {
 }
 
 func tulisJSON(w http.ResponseWriter, status int, v any) {
+	// fmt.Println(w, status, "isi dari w httpresponsewriter dan v status")
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(status)
 	json.NewEncoder(w).Encode(v)
@@ -217,9 +218,9 @@ func jeda(next http.Handler) http.Handler {
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8089"
+		port = "8088"
 	}
-
+	fmt.Println("port : ", port)
 	tugas := &koleksi{
 		base:   "/api/tugas",
 		wajib:  "judul",

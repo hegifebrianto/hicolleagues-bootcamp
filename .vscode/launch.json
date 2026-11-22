@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Sesi 18 Backend",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceFolder}/sesi18-project2-buku/backend/go",
+      "cwd": "${workspaceFolder}/sesi18-project2-buku/backend/go",
+      "stopOnEntry": false
+    },
+    {
+      "name": "Launch Current Folder",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "program": "${fileDirname}",
+      "stopOnEntry": false
+    }
+  ]
+}
